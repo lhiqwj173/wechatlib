@@ -1,11 +1,5 @@
 ﻿#pragma once
 
-#include <windows.h>
-#include <wininet.h>
-#pragma comment(lib, "wininet.lib")
-
-#include <string>
-
 class WeChat
 {
 
