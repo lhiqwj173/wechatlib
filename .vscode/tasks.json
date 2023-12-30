@@ -3,10 +3,9 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "BUILD DLL",
+			"label": "BUILD LIB",
 			"command": "cl.exe",
 			"args": [
-				"/LD",
 				"/arch:IA32",
 				"/EHsc",
 				"/Od",
@@ -16,7 +15,6 @@
 				"/D_CRT_SECURE_NO_WARNINGS",
 				"/D_MBCS",
 				"/Fo:${workspaceFolder}\\wechatlib\\build\\",
-				"/Fe:${workspaceFolder}\\wechatlib\\Release\\wechat.dll",
 				"${workspaceFolder}\\wechatlib\\src\\*.cpp",
 			],
 			"options": {
@@ -27,6 +25,20 @@
 			],
 			"group": "build",
 			"detail": "编译器: cl.exe"
+		},
+		{
+			"label": "PRODUCE LIB",
+			"type": "shell",
+			"command": "lib",
+			"args": [
+				"/OUT:${workspaceFolder}\\wechatlib\\Release\\wechat.lib",
+				"${workspaceFolder}\\wechatlib\\build\\*.obj"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always"
+			}
 		},
 		{
 			"type": "cppbuild",
@@ -60,7 +72,7 @@
 				"/nologo",
 				"/IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um",
 				"/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-				"${workspaceFolder}\\wechatlib\\src\\wechat.cpp",
+				// "${workspaceFolder}\\wechatlib\\src\\wechat.cpp",
 				"${file}"
 			],
 			"options": {
