@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "调试",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal",
+            // 编译依赖
+            "preLaunchTask": "MSVC",
+        }
+    ],
+    "version": "2.0.0"
+}
